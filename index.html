@@ -14,7 +14,7 @@ var x = Math.floor((Math.random() * memes.length) + 0);
 let chosen_meme = memes[x]
 
 var url1 = window.location.href 
-var url1 = hash.replace('index.html','');
+var url1 = url1.replace('index.html','');
 var url = url1 + "images/" + chosen_meme;
 console.log("url is equal to " + url);
 window.location.href = url
