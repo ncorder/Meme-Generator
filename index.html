@@ -4,7 +4,7 @@ function redirect2meme(input)
 {
 // Set Meme List
 let memes = [
-  "http://coinsh.red",
+  "dogs_dont_whisper.jpg",
 ]
 
 var x = Math.floor((Math.random() * memes.length) + 0);
@@ -12,7 +12,7 @@ let chosen_meme = memes[x]
 
 var url1 = window.location.href 
 var url1 = hash.replace('index.html','');
-var url = url1 + chosen_meme;
+var url = url1 + "images/" + chosen_meme;
 console.log("url is equal to " + url);
 window.location.href = url
 }
