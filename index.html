@@ -7,15 +7,18 @@ function redirect2meme()
 {
 // Set Meme List
 let memes = [
-  "dogs_dont_whisper.jpg",
+  "QmWUVyJbCkXwnhvSXSx6hREhj5u1are6Mqx5ytJBNqgWxq",
 ]
+
+// Meme Names
+// 1: dogs_dont_whisper.jpg
 
 var x = Math.floor((Math.random() * memes.length) + 0);
 let chosen_meme = memes[x]
 
 var url1 = window.location.href 
 var url1 = url1.replace('index.html','');
-var url = url1 + "images/" + chosen_meme;
+var url = url1 + "images.html#" + chosen_meme;
 console.log("url is equal to " + url);
 window.location.href = url
 }
