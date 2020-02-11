@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <div id="header"></div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    var input_hash = location.hash;
+    var hash = input_hash.slice(1);
+    var file = "https://coinsh.red/ipfs/" + hash;
+    var img = document.createElement("img");
+    img.src = file;
+    var src = document.getElementById("header");
+    src.appendChild(img);    
+    </script>
+  </body>
+</html>
