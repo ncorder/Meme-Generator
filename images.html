@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src="jquery-3.4.1.min.js"></script>
+</head>
   <body>
   <div id="header"></div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+  let x = 0;
+  // Set Proxies  
+  let proxies = [
+  "http://coinsh.red/ipfs/",
+  "ipfs.privacytools.io/ipfs/",
+	"https://ipfs.io/ipfs/",
+	"https://gateway.ipfs.io/ipfs/",
+]
+    
+    function myFunction(proxy) {
     var input_hash = location.hash;
     var hash = input_hash.slice(1);
-    var file = "https://coinsh.red/ipfs/" + hash;
+    var file = proxy + hash;
     var img = document.createElement("img");
     img.src = file;
     var src = document.getElementById("header");
-    src.appendChild(img);    
+    src.appendChild(img); 
+    }
+    myFunction(proxies[x]);
+    
+    async function acoolname() {
+    let n = 0;
+    while (n < 1 && n < 5) {
+    await new Promise(r => setTimeout(r, 2000));
+    var input_hash = location.hash;
+    var hash = input_hash.slice(1);
+    var file = proxies[x] + hash;
+    console.log(n)
+    console.log(x)
+    $.get(file)
+    .done(function() { 
+        // Do something now you know the image exists.
+        console.log("Image Loaded");
+        n++;
+        console.log(n)
+        console.log(x)
+    }).fail(function() { 
+        // Image doesn't exist - do something else.
+        x++;
+        myFunction(proxies[x]);   
+        console.log(n)
+        console.log(x)
+    })
+    }
+    }
+    acoolname();
     </script>
   </body>
 </html>
